@@ -1,0 +1,160 @@
+  /* rank-section */
+  .rank-section .content {
+    display: flex;
+    height: 472px;
+    margin-top: 20px;
+    background: url(../images/rank_bg.png) no-repeat;
+    }
+  
+    .rank-section .content .rank {
+      width: 230px;
+    }
+  
+    .rank-section .content .rank .header {
+      /* 为展示信息，使其左右排布，即flex */
+      display: flex;
+      height: 120px;
+      box-sizing: border-box;
+      padding: 20px 0 0 20px;
+    }
+  
+    .rank-section .rank .header .album {
+      position: relative;
+      /* 给封面固定一个宽高 */
+      width: 80px;
+      height: 80px;
+    }
+  
+    .rank-section .rank .header .album img {
+      /* 让图片占满规定的宽高 */
+      width: 100%;
+      height: 100%;
+    }
+  
+    .rank-section .rank .header .album .cover {
+      position: absolute;
+      /* 让其铺满整个img */
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      /* 图片蒙版 */
+      background: url(../images/cover_sprite.png) no-repeat -145px -57px;
+    }
+  
+    .rank-section .rank .header .info {
+      padding: 10px 0 0 12px;
+    }
+  
+    .rank-section .rank .header .info .title {
+      color: #333;
+    }
+  
+    .rank-section .rank .header .info .operation {
+      margin-top: 12px;
+    }
+  
+    .rank-section .rank .header .info .btn {
+      /* 使a元素可以设置大小 */
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-top: 15px;
+      background: url(../images/main_sprite.png) no-repeat;
+    }
+  
+    .rank-section .rank .header .info .btn.play {
+      background-position: -267px -205px;
+    }
+  
+    .rank-section .rank .header .info .btn.play:hover {
+      background-position: -267px -235px;
+    }
+  
+    .rank-section .rank .header .info .btn.favor {
+      background-position: -300px -205px;
+      margin-left: 8px;
+    }
+  
+    .rank-section .rank .header .info .btn.favor:hover {
+      background-position: -300px -235px;
+    }
+  
+    .rank-section .rank .list {
+      padding-left: 12px;
+    }
+  
+    .rank-section .rank .list .item {
+      display: flex;
+      height: 32px;
+      line-height: 32px;
+      /* item没有设置固定宽度，因为flex布局默认拉伸，因此也就不需要boxsizing */
+      padding-right: 5px;
+    }
+  
+    .rank-section .rank .list .item .no {
+      width: 35px;
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+    
+    .rank-section .rank .list .item:nth-child(-n+3) .no {
+      color: #c10d0c;
+    }
+  
+    .rank-section .rank .list .item .song {
+      flex: 1;
+  
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  
+    .rank-section .rank .list .item .song:hover {
+      text-decoration: underline;
+    }
+    
+    /* 三个按钮 */
+    .rank-section .rank .list .item .operation {
+      /* 默认不展示图标 */
+      display: none;
+      align-items: center;
+      width: 82px;
+    }
+  
+    .rank-section .rank .list .item:hover .operation {
+      /* 当悬浮时展示图标 */
+      display: flex;
+    }
+  
+    .rank-section .rank .list .item .operation .btn {
+      width: 17px;
+      height: 17px;
+      margin-right: 8px;
+      background: url(../images/main_sprite.png) no-repeat;
+    }
+  
+    .rank-section .rank .list .item .operation .btn.play {
+      background-position: -267px -268px;
+    }
+  
+    .rank-section .rank .list .item .operation .btn.add {
+      background: url(../images/iconall_sprite.png) no-repeat;
+      background-position: 2px -698px;
+    }
+  
+    .rank-section .rank .list .item .operation .btn.favor {
+      background-position: -297px -268px;
+    }
+  
+    .rank-section .rank .list .more {
+      height: 32px;
+      line-height: 32px;
+      text-align: right;
+      padding-right: 32px;
+    }
+  
+    .rank-section .rank .list .more a:hover {
+      text-decoration: underline;
+    }

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/reset.css">
+</head>
+
+<style>
+
+  .banner {
+    background: url(./images/banner_bg_02.jpeg) center center / 6000px;
+  }
+
+  /* 将图片区域居中 */
+  .area.wrapper_03 {
+    position: relative;
+    height: 285px;
+    background-color: orange;
+  }
+
+  /* left */
+  .banner .area .left {
+    position: relative;
+    width: 730px;
+  }
+
+  .banner .left .image-list {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .banner .left .image-list li {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .banner .left .image-list .item {
+    display: block;
+  }
+
+  /* 让图片占据a元素链接的全部 */
+  /* 此处设置vertical-align top依然会有小部分不能覆盖，故设置高度 */
+  .banner .left .image-list .item img {
+    width: 100%;
+    height: 285px;
+  }
+
+  /* width和height并不继承！！！！！！！！！！ */
+  /* 定位参照对象的宽度 = left + right + margin-left + margin-right + 绝对定位元素的实际占用宽度 */
+  /* 此处没有设置绝对元素的宽高，默认为auto，优先会分配给宽高而不是margin，则绝对定位元素宽度将为定位参照对象的宽度930 - 其余值，最后得到绝对元素宽度为930 */
+  /* 由此这里的宽度为930，再设置center即可居中 */
+  /* 同理，如果这里之间设置绝对元素宽度为930，再设置center也可以居中 */
+  /* 还有一种居中方案为设置绝对元素宽高小于定位参照对象的宽高，从而使其分配到margin上面，实现居中 */
+  .banner .left .dots-list {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    width: 730px;
+    justify-content: center;
+  }
+
+  .banner .left .dots-list  li {
+    margin:0 2px;
+  }
+
+  .banner .left .dots-list .item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(./images/banner_sprite.png) 3px -343px;
+  }
+
+  .banner .left .dots-list .item.active,
+  .banner .left .dots-list .item:hover {
+    background-position: -16px -343px;
+  }
+
+  /* right */
+  .banner .right {
+    position: absolute;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    width: 254px;
+    background: url(./images/download_sprite.png);
+  }
+
+  .banner .right .download {
+    display: block;
+    width: 215px;
+    height: 56px;
+    margin: 186px 0 0 19px;
+    text-indent: -9999px;
+  }
+
+  .banner .right .download:hover {
+    background: url(./images/download_sprite.png) 0 -290px;
+  }
+
+  .banner .right .desc {
+    margin-top: 12px;
+    margin-left: 20px;
+    font-size: 12px;
+    color:#8d8d8d;
+  }
+
+  /* 控制按钮 */
+  .banner .area .control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 37px;
+    height: 63px;
+    margin: auto 0;
+    background-image: url(./images/banner_sprite.png);
+  }
+
+  .banner .area .control.left {
+    left: -70px;
+    background-position: 0 -360px;
+  }
+
+  .banner .area .control.left:hover {
+    background-position: 0 -430px;
+  }
+
+  .banner .area .control.right {
+    right: -70px;
+    background-position: 0 -508px;
+  }
+
+  .banner .area .control.right:hover {
+    background-position: 0 -578px;
+  }
+</style>
+
+<body>
+
+  <div class="banner">
+    
+    <div class="area wrapper_03">
+
+      <div class="left">
+        <!-- 轮播图 -->
+        <ul class="image-list">
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpeg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpeg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpeg" alt="">
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#">
+              <img src="./images/banner_02.jpeg" alt="">
+            </a>
+          </li>
+        </ul>
+        <!-- 轮播图点 -->
+        <ul class="dots-list">
+          <li><a class="item active" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+          <li><a class="item" href="#"></a></li>
+        </ul>
+      </div>
+
+      <div class="right">
+        <a href="#" class="download">download</a>
+        <p class="desc">Pc Mac Linux iPad</p>
+      </div>
+
+      <a href="#" class="control left"></a>
+      <a href="#" class="control right"></a>
+
+    </div>
+
+  </div>
+
+
+</body>
+</html>

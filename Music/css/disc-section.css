@@ -1,0 +1,107 @@
+.disc-section .content {
+  height: 186px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+}
+
+.disc-section .content .inner {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1px solid #fff;
+  background-color: #f5f5f5;
+}
+
+.disc-section .content .inner .roller {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.disc-section .inner .roller .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-shrink: 0;
+  padding-top: 10px;
+}
+/* 由于flex布局，可以设置宽高 */
+.disc-section .roller .list .item {
+  width: 118px;
+  height: 150px;
+  background: url(../images/main_sprite.png) no-repeat -260px 100px;
+}
+
+.disc-section .roller .list .album {
+  position: relative;
+}
+
+.disc-section .roller .list .cover {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background: url(../images/cover_sprite.png) no-repeat 0 -570px;
+}
+
+.disc-section .roller .album .play {
+  /* 未悬浮时不显示任何效果 */
+  display: none;
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  width: 22px;
+  height: 22px;
+  background: url(../images/icon_sprite.png) 0 -85px;
+}
+
+.disc-section .roller .album:hover .play {
+  /* 悬浮时显示 */
+  display: block;
+}
+
+.disc-section .roller .item a {
+  /* 设置block目的是占用上述通过flex设置的item这一父级元素的一行（设置了宽） */
+  display: block;
+  margin-top: 5px;
+  padding-right: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.disc-section .roller .item a:hover {
+  text-decoration: underline;
+}
+
+.disc-section .roller .item a.title {
+  color: #000;
+}
+
+.disc-section .roller .item a.title {
+  color: #666;
+}
+
+.disc-section .inner .control {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 72px;
+  bottom: 0;
+  background-image: url(../images/main_sprite.png);
+}
+
+.disc-section .inner .control.control-left {
+  left: 3px;
+  background-position: -260px -75px;
+}
+
+.disc-section .inner .control.control-right {
+  right: 3px;
+  background-position: -320px -75px;
+}
